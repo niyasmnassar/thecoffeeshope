@@ -9,7 +9,8 @@ import {
   Container,
   Offcanvas,
   NavDropdown,
-  Dropdown
+  Dropdown,
+  Button
 } from "react-bootstrap";
 import { useState } from "react";
 
@@ -71,6 +72,12 @@ export const Header = () => {
                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
+
+            <Link to="/cart">
+              <Button style={{ width: "95%", margin: "0 10px" }}>
+                Go To Cart
+              </Button>
+            </Link>
 
             <Burger open={open} setOpen={setOpen} />
             <Menu open={open} setOpen={setOpen} />
