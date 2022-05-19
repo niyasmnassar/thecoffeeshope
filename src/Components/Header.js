@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import logo from "./../bras1.png";
+import logo from "./../logoshope.png";
 import cartIcon from "./../bag.png";
+import { CartState } from "../Context";
 import {
   Nav,
   Navbar,
@@ -13,6 +14,7 @@ import {
 import { useState } from "react";
 
 export const Header = () => {
+  const { cart } = CartState();
   const [show, setShow] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -59,7 +61,7 @@ export const Header = () => {
                   <div className="menu-cart-icon">
                     <img src={cartIcon} alt="cartIcon"></img>
                   </div>
-                  <div className="menu-cart-item-count">{}</div>
+                  <div className="menu-cart-item-count">({cart.length})</div>
                 </div>
               </Dropdown.Toggle>
 

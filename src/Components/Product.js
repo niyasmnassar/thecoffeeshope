@@ -1,8 +1,11 @@
 import React from "react";
+import { CartState } from './../Context'
 
-const Product = ({prod, cart, setCart}) => {
+// const Product = ({prod, cart, setCart}) => {
+  const Product = ({prod}) => {
+    const { cart, setCart } = CartState();
   return (
-    <div className="col-3" key={prod.id}>
+    <div className="col col-md-4 col-lg-3" key={prod.id}>
       <div className="showcase">
         <figure>  
         <img src={prod.image} alt={prod.name}></img>
