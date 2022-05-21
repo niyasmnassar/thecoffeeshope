@@ -309,7 +309,7 @@ button.harmburger {
           width: 24px;
           height: 24px;
           border: none;
-          background-color: #fff;
+          background: transparent;
           background-position: center;
           color: $primary-background;
           filter: brightness(12.5) contrast(2.5) invert(1);
