@@ -8,7 +8,7 @@ import $ from 'jquery';
 import Popper from 'popper.js';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 import './index.scss';
-import Context from './Context';
+import Context from './Context/Context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
