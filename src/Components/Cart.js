@@ -1,18 +1,17 @@
 import { useEffect, useState } from "react";
-import { FormControl } from "react-bootstrap";
 import { CartState } from "../Context/Context";
 import Trash from "../trash.svg";
 
-// const Cart = ({ cart, setCart }) => {
 const Cart = () => {
   const {
     state: { cart },
     dispatch,
   } = CartState();
   const [total, setTotal] = useState();
+  const taxDefault = 1.5;
   useEffect(() => {
     setTotal(
-      cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
+      cart.reduce((acc, curr) => acc + Number(curr.price + (taxDefault)) * curr.qty, 0)
     );
   }, [cart]);
   console.log(cart);
@@ -37,19 +36,7 @@ const Cart = () => {
                         <span>{prod.name}</span>
                         <span>{prod.price}</span>
                       </div>
-                      <FormControl as="select" value={prod.qty} onChange={(e) =>
-                      dispatch({
-                        type: "CHANGE_CART_QTY",
-                        payload: {
-                          id: prod.id,
-                          qty: e.target.value,
-                        },
-                      })
-                    }>
-                      {[...Array(prod.qty).keys()].map((x) => (
-                      <option key={x + 1}>{x + 1}</option>
-                    ))}
-                      </FormControl>
+                      
                       <button
                         onClick={() =>
                           dispatch({
@@ -71,7 +58,7 @@ const Cart = () => {
             <div className="col-md-3 summary">
               <div className="wrap">
                 <span>Subtotal {cart.length} items</span>
-                <span>Total : &#8377;{total}</span>
+                <span>Total : &#8377;{total} <span>(Inclusive of all Taxes)</span></span>
                 <button className="checkout-btn" disabled={cart.length === 0}>
                   Proceed To Checkout
                 </button>
