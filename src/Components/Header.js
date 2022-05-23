@@ -22,18 +22,15 @@ export const Header = () => {
   const Menu = ({ open }) => {
     return (
       <nav className="main-nav" open={open}>
-        <a href="/">
-          <span role="img" aria-label="about us"></span>
-          About us
-        </a>
-        <a href="/">
-          <span role="img" aria-label="price"></span>
-          Pricing
-        </a>
-        <a href="/">
-          <span role="img" aria-label="contact"></span>
-          Contact
-        </a>
+        <Link to="/About">
+        About us
+        </Link>
+        <Link to="/Menu">
+        Restaurant Menu
+        </Link>
+        <Link to="/Contact">
+        Contact
+        </Link>
       </nav>
     );
   };

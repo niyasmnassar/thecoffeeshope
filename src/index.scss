@@ -5,6 +5,11 @@
 
 $primary-background: #1d1d1d;
 $secondary: #782020;
+
+$unit-tiny: 4px;
+$unit-large: 32px;
+$primary-color: #e67437;
+
 body {
   background: $primary-background;
   .App-header {
@@ -24,6 +29,49 @@ body {
       height: auto;
       display: block;
     }
+  }
+}
+h2{
+  &.blend-title{
+    margin-bottom: 30px;
+    color: #e67437;
+    font-family: "Teko", sans-serif;
+    margin-top: 20px;
+  }
+}
+.menu {
+  padding: 2em 1em;
+  columns: 100px 2;
+  column-gap: $unit-large;
+  
+  @media (min-width: 600px) {
+    padding: 1em calc(50% - 300px);
+  }
+  .item {
+    border-bottom: 1px dotted #c5c5c5;
+    break-inside: avoid;
+    display: flex;
+    justify-content: space-between;
+    span {
+      font-family: "Teko", sans-serif;
+      margin-bottom: -$unit-tiny;
+      padding: $unit-tiny;
+      color: #555;
+    }
+  }
+}
+
+
+.list-title {
+  font-family: "Teko", sans-serif;
+  font-size: 30px;
+  color: $primary-color;
+  margin-bottom: $unit-large;
+}
+.list {
+  margin-bottom: $unit-large;
+  @media (max-width:767px){
+    width: 100%;
   }
 }
 nav.main-nav {
@@ -168,10 +216,13 @@ button.harmburger {
     }
   }
 }
-.productlist {
+.base-bg{
   background-image: url(../public/assets/trans-texture.jpg);
   background-size: cover;
   padding: 20px 10px 20px;
+}
+.productlist {
+  @extend .base-bg;
   .showcase {
     text-align: center;
 
@@ -225,7 +276,7 @@ button.harmburger {
     }
   }
   .form-control {
-    max-width: 40px;
+    max-width: 50px;
   }
   .cart-info {
     display: flex;
