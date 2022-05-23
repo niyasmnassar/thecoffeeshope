@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Form } from "react-bootstrap";
 import { CartState } from "../Context/Context";
 import Trash from "../trash.svg";
 
@@ -36,6 +37,28 @@ const Cart = () => {
                         <span>{prod.name}</span>
                         <span>{prod.price}</span>
                       </div>
+
+                      <div className="col-md-2">
+                      <Form.Control
+                    as="select"
+                    value={prod.qty}
+                    onChange={(e) =>
+                      dispatch({
+                        type: "changeCartQuantity",
+                        payload: {
+                          id: prod.id,
+                          qty: e.target.value,
+                        },
+                      })
+                    }
+                  >
+                    {[...Array(10).keys()].map((x) => (
+                      <option key={x + 1}>{x + 1}</option>
+                    ))}
+                  </Form.Control>
+                      
+                      </div>
+                      
                       
                       <button
                         onClick={() =>
