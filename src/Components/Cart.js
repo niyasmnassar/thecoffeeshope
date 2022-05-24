@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { CartState } from "../Context/Context";
 import Trash from "../trash.svg";
 
@@ -79,13 +80,23 @@ const Cart = () => {
               )}
             </div>
             <div className="col-md-3 summary">
-              <div className="wrap">
-                <span>Subtotal {cart.length} items</span>
-                <span>Total : &#8377;{total} <span>(Inclusive of all Taxes)</span></span>
-                <button className="checkout-btn" disabled={cart.length === 0}>
-                  Proceed To Checkout
-                </button>
-              </div>
+              <h2>Product Summary</h2>
+                {cart.length > 0 ? (
+                  <div className="wrap">
+                  <span>Subtotal {cart.length} items</span>
+                  <span>Total : <strong>&#8377;{total}</strong> <span>(Inclusive of all Taxes)</span></span>
+                  <button className="checkout-btn" disabled={cart.length === 0}>
+                    Proceed To Checkout
+                  </button>
+                  <Link to="/">
+                  <Button className="order-now d-flex w-100 mb-3">Continue Shopping</Button>
+                  </Link>
+                </div>
+                ):(
+                  <div className="wrap">
+                  <span>Cart is Empty !</span>
+                  </div>
+                )}
             </div>
           </div>
         </div>

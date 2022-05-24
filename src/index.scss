@@ -31,11 +31,11 @@ body {
     }
   }
 }
-.h-70{
+.h-70 {
   height: 70vh;
 }
-h2{
-  &.blend-title{
+h2 {
+  &.blend-title {
     margin-bottom: 30px;
     color: #e67437;
     font-family: "Teko", sans-serif;
@@ -43,7 +43,7 @@ h2{
   }
 }
 .contact {
-  .br-box{
+  .br-box {
     border: 1px solid #1d1d1d;
     padding: 20px;
     width: 100%;
@@ -53,25 +53,25 @@ h2{
     flex-direction: column;
     text-align: center;
   }
-  p{
-    a{
+  p {
+    a {
       color: #e67437;
     }
   }
 }
-footer{
+footer {
   padding: 10px 0;
-  .nav-link{
+  .nav-link {
     color: #fff;
     text-transform: uppercase;
-    &:hover{
-      color:#9d9d9d;
+    &:hover {
+      color: #9d9d9d;
     }
   }
-  p{
-    &.copy{
+  p {
+    &.copy {
       color: #9d9d9d;
-      font-size:14px;
+      font-size: 14px;
     }
   }
 }
@@ -79,7 +79,7 @@ footer{
   padding: 2em 1em;
   columns: 100px 2;
   column-gap: $unit-large;
-  
+
   @media (min-width: 600px) {
     padding: 1em calc(50% - 300px);
   }
@@ -96,7 +96,21 @@ footer{
     }
   }
 }
-
+button {
+  &.order-now {
+    background-color: #e67437;
+    border-color: #e67437;
+    color: #fff;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    &:hover {
+      background-color: #e67437;
+      border-color: #0a58ca;
+      text-decoration: none;
+    }
+  }
+}
 
 .list-title {
   font-family: "Teko", sans-serif;
@@ -106,7 +120,7 @@ footer{
 }
 .list {
   margin-bottom: $unit-large;
-  @media (max-width:767px){
+  @media (max-width: 767px) {
     width: 100%;
   }
 }
@@ -252,11 +266,11 @@ button.harmburger {
     }
   }
 }
-.base-bg{
+.base-bg {
   background-image: url(../public/assets/trans-texture.jpg);
   background-size: cover;
   padding: 20px 10px 20px;
-  min-height:70vh;
+  min-height: 70vh;
 }
 .productlist {
   @extend .base-bg;
@@ -433,8 +447,22 @@ button.harmburger {
 }
 .summary {
   background: $primary-background;
+  h2 {
+    color: #fff;
+    font-size: 15px;
+    margin-top: 10px;
+  }
   .wrap {
     padding: 10px 0 0;
+    span {
+      display: flex;
+      flex-direction: row;
+      font-size: 14px;
+      span {
+        font-size: 12px;
+        padding-left: 10px;
+      }
+    }
   }
   span {
     display: flex;

@@ -120,9 +120,13 @@ function Menu() {
               </div>
             </div>
             {/* menu end here */}
-            <Link to="/">
-                <Button className="order-now d-flex ">Order Now</Button>
-            </Link>
+            <div className="row">
+              <div className="col-md-12 d-flex justify-content-center align-items-center">
+                <Link to="/">
+                  <Button className="order-now d-flex ">Order Now</Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
