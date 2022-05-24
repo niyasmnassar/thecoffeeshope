@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "./../logoshope.png";
 import cartIcon from "./../bag.png";
 import { CartState } from "../Context/Context";
@@ -18,6 +18,11 @@ export const Header = () => {
     dispatch
   } = CartState();
   const [open, setOpen] = useState(false);
+  const {pathname} = useLocation();
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname])
 
   const Menu = ({ open }) => {
     return (
