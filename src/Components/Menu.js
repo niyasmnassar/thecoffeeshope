@@ -6,12 +6,12 @@ function Menu() {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h2 className="text-center blend-title">Welcome Back to The Coffee Shope</h2>
+            <h2 className="text-center blend-title">Welcome Back to TheCoffeeShope</h2>
 
 
             <div className="menu">
               <div className="list">
-                <h2 className="list-title">By The Pound</h2>
+                <h2 className="list-title">Coffee / Tea</h2>
                 <ul>
                   <li className="item"><span className="name">Brisket</span>
                     <span className="price">22</span>
@@ -56,7 +56,7 @@ function Menu() {
               </div>
 
               <div className="list">
-                <h2 className="list-title">Sides</h2>
+                <h2 className="list-title">Burger</h2>
                 <ul>
                   <li className="item"><span className="name">Potato Salad</span>
                     <span className="price">3</span>
@@ -70,7 +70,7 @@ function Menu() {
                 </ul>
               </div>
               <div className="list">
-                <h2 className="list-title">By The Pound</h2>
+                <h2 className="list-title">Beverages</h2>
                 <ul>
                   <li className="item"><span className="name">Brisket</span>
                     <span className="price">22</span>
@@ -91,7 +91,7 @@ function Menu() {
               </div>
 
               <div className="list">
-                <h2 className="list-title">Sandwiches</h2>
+                <h2 className="list-title">Deserts</h2>
                 <ul>
                   <li className="item"><span className="name">Brisket</span>
                     <span className="price">22</span>
