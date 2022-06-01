@@ -7,7 +7,6 @@ function Footer() {
         <footer className='d-flex justify-content-center flex-column align-items-center'>
         <Nav
   activeKey="/home"
-  onSelect={(selectedKey) => alert(`selected ${selectedKey}`)}
 >
   <Nav.Item>
     <Nav.Link href="/">Home</Nav.Link>

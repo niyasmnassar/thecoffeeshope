@@ -10,6 +10,10 @@ $unit-tiny: 4px;
 $unit-large: 32px;
 $primary-color: #e67437;
 
+a{
+  text-decoration: none;
+}
+
 body {
   background: $primary-background;
   .App-header {
@@ -306,7 +310,8 @@ button.harmburger {
       transition: all 0.5s;
       line-height: 20px;
       border-radius: 3px;
-      width: 200px;
+      max-width: 200px;
+      width:100%;
       &:hover {
         background: $secondary;
         border-color: $secondary;
@@ -320,6 +325,7 @@ button.harmburger {
   align-items: center;
   padding: 10px;
   background: $primary-background;
+  margin-bottom:10px;
   figure {
     margin-bottom: 0px;
     img {
@@ -447,13 +453,21 @@ button.harmburger {
 }
 .summary {
   background: $primary-background;
+  padding: 20px;
   h2 {
     color: #fff;
-    font-size: 15px;
+    font-size: 20px;
     margin-top: 10px;
+    margin-bottom: 20px;
   }
   .wrap {
-    padding: 10px 0 0;
+    padding: 10px;
+    .total{
+      display: flex;
+      span{
+        flex-direction: row;
+      }
+    }
     span {
       display: flex;
       flex-direction: row;
@@ -466,9 +480,11 @@ button.harmburger {
   }
   span {
     display: flex;
-    flex-direction: column;
     font-size: 16px;
     color: #fff;
     margin-bottom: 10px;
+    strong{
+      display: flex;
+    }
   }
 }

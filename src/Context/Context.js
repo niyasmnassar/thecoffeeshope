@@ -18,10 +18,10 @@ const Context = ({ children }) => {
     products:products,
     cart:[],
   })
-  // console.log(cart);
+  console.log(products);
 
   return (
-    <Cart.Provider value={{ state, dispatch }}>
+    <Cart.Provider value={{ state, dispatch, products }}>
       {children}
     </Cart.Provider>
   );

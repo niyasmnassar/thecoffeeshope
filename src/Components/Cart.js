@@ -7,16 +7,14 @@ import Trash from "../trash.svg";
 const Cart = () => {
   const {
     state: { cart },
-    dispatch,
+    dispatch
   } = CartState();
   const [total, setTotal] = useState();
-  const taxDefault = 1.5;
   useEffect(() => {
     setTotal(
-      cart.reduce((acc, curr) => acc + Number(curr.price + (taxDefault)) * curr.qty, 0)
-    );
+      cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
+    )
   }, [cart]);
-  console.log(cart);
   return (
     <div>
       <div className="productlist">
@@ -79,12 +77,14 @@ const Cart = () => {
                 </span>
               )}
             </div>
-            <div className="col-md-3 summary">
-              <h2>Product Summary</h2>
+            <div className="col-md-3">
+              
                 {cart.length > 0 ? (
-                  <div className="wrap">
+                  <div className="wrap summary">
+                    <h2>Product Summary</h2>
                   <span>Subtotal {cart.length} items</span>
-                  <span>Total : <strong>&#8377;{total}</strong> <span>(Inclusive of all Taxes)</span></span>
+                  <div className="total"><span>Total : <b>&#8377;{total}</b></span></div>
+                  <p>(Inclusive of all Taxes)</p>
                   <button className="checkout-btn" disabled={cart.length === 0}>
                     Proceed To Checkout
                   </button>
@@ -93,7 +93,8 @@ const Cart = () => {
                   </Link>
                 </div>
                 ):(
-                  <div className="wrap">
+                  <div className="wrap summary">
+                    <h2>Product Summary</h2>
                   <span>Cart is Empty !</span>
                   </div>
                 )}
