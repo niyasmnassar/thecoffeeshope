@@ -8,7 +8,7 @@ import { CartState } from '../Context/Context';
    } = CartState();
    console.log(cart);
   return (
-    <div className="col col-md-4 col-lg-3" key={prod.id}>
+    <div className="col col-md-4 col-sm-6 col-lg-3" key={prod.id}>
       <div className="showcase">
         <figure>  
         <img src={prod.image} alt={prod.name}></img>
